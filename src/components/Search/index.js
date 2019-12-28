@@ -1,30 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import {MoviesContext} from "../context/MovieContext";
 
-const Search = ({search}) => {
-    const {searchValue, setSearchValue} = useState('');
-
-    const handleInput = event => {
-      setSearchValue(event.target.value);
-    };
-
-    const resetInput = () => {
-        setSearchValue('');
-    };
-
-    const handleSubmit = event => {
-        event.preventDefault();
-        search(searchValue);
-        resetInput();
-    };
+const Search = () => {
+    const appContext = useContext(MoviesContext);
+    const { handleSubmit, handleSearchChange, search } = appContext;
 
     return (
-        <form className="search">
+        <form className="search" onSubmit={e => handleSubmit(e)}>
             <input
-                value={searchValue}
-                onChange={handleInput}
+                onChange={handleSearchChange}
                 type="text"
+                id="search"
+                placeholder="Titles, tags etc..."
+                name="search"
+                value={search}
             />
-            <input onClick={handleSubmit} type="submit" value="SEARCH" />
+            <input type="submit" value="SEARCH" />
         </form>
     );
 };
