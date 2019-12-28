@@ -1,0 +1,26 @@
+header {
+    background: #9B58B5;
+    height: 50px;
+    color: white;
+    font-weight: 500;
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+}
+
+nav ul {
+    height: 45px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul li:first-child{
+    margin-right: auto;
+}
+
+nav ul li:nth-child(2){
+    margin-right: 70px;
+}
