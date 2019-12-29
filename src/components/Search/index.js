@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import {MoviesContext} from "../../context/MovieContext";
+import './index.css';
 
 const Search = () => {
     const appContext = useContext(MoviesContext);
     const { handleSubmit, handleSearchChange, search } = appContext;
 
     return (
-        <form className="search" onSubmit={e => handleSubmit(e)}>
+        <form className="search demo-2" onSubmit={e => handleSubmit(e)}>
             <input
                 onChange={handleSearchChange}
                 type="text"
@@ -15,7 +16,6 @@ const Search = () => {
                 name="search"
                 value={search}
             />
-            <input type="submit" value="SEARCH" />
         </form>
     );
 };

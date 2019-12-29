@@ -1,8 +1,9 @@
 header {
-    background: #9B58B5;
-    height: 50px;
-    color: white;
+    height: 130px;
+    color: black;
     font-weight: 500;
+    font-size: 1.35rem;
+    padding-top: 30px;
 }
 
 nav {
@@ -13,14 +14,51 @@ nav {
 nav ul {
     height: 45px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
 }
 
-nav ul li:first-child{
-    margin-right: auto;
+.fas {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
 }
 
-nav ul li:nth-child(2){
-    margin-right: 70px;
+.circle {
+    background: #ededed;
+    border: solid 1px #ccc;
+    padding: 12px;
+    width: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
+
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
 }
+.circle:focus {
+    width: 130px;
+    background-color: #fff;
+    border-color: #66CC75;
+
+    -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+.circle:hover {
+    background-color: #fff;
+}
+
+.circle:hover .fa-heart {
+    color: darkred;
+}
+
+.circle:hover .fa-home {
+    color: dodgerblue;
+}
+

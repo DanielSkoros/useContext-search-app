@@ -9,12 +9,16 @@ const Header = () => {
                 <ul>
                     <li className="nav__item">
                         <Link to='/'>
-                            Home
+                           <div className="circle">
+                               <i className="fas fa-home"></i>
+                           </div>
                         </Link>
                     </li>
                     <li className="nav__item">
                         <Link to='/favourites'>
-                            Favourites
+                           <div className="circle">
+                               <i className="fas fa-heart"></i>
+                           </div>
                         </Link>
                     </li>
                     <li className="nav__item">

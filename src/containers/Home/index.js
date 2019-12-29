@@ -9,7 +9,7 @@ const Home = () => {
 
     const renderBeginScreen = () => (
         <div className={'begin__container'}>
-            Please use search bar above
+            <div className="begin__image"></div>
         </div>
     );
 

@@ -1,5 +1,5 @@
 main {
-    width: 85%;
+    width: 90%;
     margin: auto;
 }
 
@@ -14,9 +14,34 @@ main {
 .movies__container {
     margin-top: 100px;
 }
+.begin__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.begin__image {
+    background: url("/notFound.png") no-repeat;
+    width: 100%;
+    height: 420px;
+}
 
 .--flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+
+@media screen and (min-width: 768px){
+    .begin__container {
+        height: calc(100vh - 80px);
+    }
+
+    .begin__image {
+        background: url("/notFound.png") no-repeat;
+        width: 377px;
+        height: 420px;
+    }
 }
