@@ -4,6 +4,7 @@ header {
     font-weight: 500;
     font-size: 1.35rem;
     padding-top: 30px;
+
 }
 
 nav {
@@ -22,6 +23,7 @@ nav ul {
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     transition: all .5s;
+    color: #616161;
 }
 
 .circle {

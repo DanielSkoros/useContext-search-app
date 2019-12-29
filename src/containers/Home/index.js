@@ -15,7 +15,6 @@ const Home = () => {
 
     const renderResults = () => (
       <div className={'movies__container --flex'}>
-          {console.log(movies)}
           {movies.map(movie => (
               <Movie movie={movie} key={movie.imdbID}/>
           ))}

@@ -4,7 +4,6 @@
     margin: auto auto 50px auto;
     background-color: black;
     background-size: cover;
-    cursor: pointer;
     -webkit-box-shadow: 0 0 5px #000;
     box-shadow: 0 0 5px #000;
 }
@@ -63,9 +62,17 @@
 .cart i {
     font-size: 16px;
 }
-.cart span {
-    margin-left: 10px;
+.cart button {
+    background: transparent;
+    border: none;
+    color: #fef5df;
+    cursor: pointer;
 }
+
+.cart button:hover .movie {
+    color: darkred;
+}
+
 .container:hover .overlay {
     opacity: 1;
 }
@@ -87,3 +94,18 @@
     opacity: 1;
 }
 
+.movie {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    margin-right: 5px;
+    color: #616161;
+}
+
+.movie:hover {
+    color: darkred;
+}
+
+.favourite {
+    color:darkred;
+}
