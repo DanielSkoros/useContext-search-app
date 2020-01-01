@@ -1,6 +1,6 @@
 {
   "homepage": "https://danielskoros.github.io/useContext-search-app",
-  "name": "Movie context",
+  "name": "MovieContext",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
