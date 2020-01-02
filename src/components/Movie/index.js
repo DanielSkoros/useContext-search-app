@@ -13,8 +13,8 @@ const Movie = ({ movie }) => {
     const poster =
         movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
 
-    const isInFavourites = fav.filter(el => el.imdbID === movie.imdbID).length;
-    const classes = isInFavourites ? `fas fa-heart movie favourite` : `fas fa-heart movie`;
+    const favStyles = fav.filter(el => el.imdbID === movie.imdbID).length;
+    const classes = favStyles ? `fas fa-heart movie favourite` : `fas fa-heart movie`;
     const addToFavourites = (id) => {
         let favourites = [];
         if (localStorage.getItem('favMovies')) {
@@ -47,7 +47,7 @@ const Movie = ({ movie }) => {
                 <div className="items cart">
                     <button onClick={() => addToFavourites(movie)}>
                         <i className={classes}></i>
-                        {isInFavourites ? 'REMOVE FROM FAVOURITES' : 'ADD TO FAVOURITES'}
+                        {favStyles ? 'REMOVE FROM FAVOURITES' : 'ADD TO FAVOURITES'}
                     </button>
                 </div>
             </div>
