@@ -13,6 +13,7 @@ const MoviesProvider = (props) => {
     const [search, setSearch] = useState('');
     const [refetch, setRefetch] = useState(false);
     const [fav, setFav] = useState(retrieveFromLocal('favMovies') || []);
+    const [searchedFav, setSearchedFav] = useState([]);
 
     const handleSearchChange = (e) => {
         setSearch(e.target.value)
@@ -25,7 +26,16 @@ const MoviesProvider = (props) => {
                 .then(res => {
                     setMovies(res.data.Search);
                     setLoading(false);
+                    setSearch('');
                 });
+    };
+
+    const handleFavouritesSearch = (e) => {
+        e.preventDefault();
+        const query = search.toLowerCase();
+        const searched = fav.filter(el => el.Title.toLowerCase().includes(query));
+        setSearchedFav(searched);
+        setSearch('');
     };
 
     return (
@@ -36,9 +46,11 @@ const MoviesProvider = (props) => {
             movies,
             fav,
             setFav,
+            searchedFav,
             refetch, setRefetch,
             handleSearchChange,
             handleSubmit,
+            handleFavouritesSearch,
         }}>
             {props.children}
         </MoviesContext.Provider>

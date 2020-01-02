@@ -9,10 +9,12 @@ const DEFAULT_PLACEHOLDER_IMAGE =
 
 const Movie = ({ movie }) => {
     const appContext = useContext(MoviesContext);
-    const { refetch, setRefetch, setFav } = appContext;
+    const { refetch, setRefetch, setFav, fav } = appContext;
     const poster =
         movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
 
+    const isInFavourites = fav.filter(el => el.imdbID === movie.imdbID).length;
+    const classes = isInFavourites ? `fas fa-heart movie favourite` : `fas fa-heart movie`;
     const addToFavourites = (id) => {
         let favourites = [];
         if (localStorage.getItem('favMovies')) {
@@ -43,10 +45,9 @@ const Movie = ({ movie }) => {
                     <p className="new">{movie.Year}</p>
                 </div>
                 <div className="items cart">
-
                     <button onClick={() => addToFavourites(movie)}>
-                        <i className="fas fa-heart movie"></i>
-                        ADD TO FAVOURITES
+                        <i className={classes}></i>
+                        {isInFavourites ? 'REMOVE FROM FAVOURITES' : 'ADD TO FAVOURITES'}
                     </button>
                 </div>
             </div>

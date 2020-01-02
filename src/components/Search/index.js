@@ -1,13 +1,17 @@
 import React, { useContext } from 'react';
 import {MoviesContext} from "../../context/MovieContext";
+import { withRouter } from "react-router";
 import './index.css';
 
-const Search = () => {
+const Search = ({location}) => {
     const appContext = useContext(MoviesContext);
-    const { handleSubmit, handleSearchChange, search } = appContext;
+    const { handleSubmit, handleSearchChange, search, handleFavouritesSearch  } = appContext;
 
     return (
-        <form className="search demo-2" onSubmit={e => handleSubmit(e)}>
+        <form className="search demo-2"
+              onSubmit={location.pathname === '/'
+                  ? e => handleSubmit(e)
+                  : e => handleFavouritesSearch(e)}>
             <input
                 onChange={handleSearchChange}
                 type="text"
@@ -20,4 +24,4 @@ const Search = () => {
     );
 };
 
-export default Search;
+export default withRouter(Search);
